@@ -20,3 +20,5 @@ echo added = $Add
 b=(10 20)
 echo ${b[0]}
 echo ${b[1]}
+
+echo coursename =$COURSE_NAME
