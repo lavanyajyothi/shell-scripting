@@ -1,6 +1,3 @@
 #!/bin/bash
 
-echo hello
-echo world
-
-echo -e "hello world\nwelcome"
+echo -e "hello\tworld\thai\nhow\tare\tyou"
