@@ -14,5 +14,5 @@ Date=$(date +%F)
 echo  Good Morning welcome today date is $Date
 
 #arthamatic substitution
-Add = $(2+3+5*7/2-5)
-added = $Add
+Add = $((2+3+5*7/2-5))
+echo added = $Add
