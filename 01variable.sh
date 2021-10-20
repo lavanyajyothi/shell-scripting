@@ -10,3 +10,5 @@ x=10
 y=20
 echo $xX$y =200
 echo ${x}x${y} =200
+Date=$(date +%F)
+echo  Good Morning welcome today date is $Date
