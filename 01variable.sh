@@ -12,3 +12,7 @@ echo $xX$y =200
 echo ${x}x${y} =200
 Date=$(date +%F)
 echo  Good Morning welcome today date is $Date
+
+#arthamatic substitution
+Add = $(2+3+5*7/2-5)
+added = $Add
