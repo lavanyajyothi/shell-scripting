@@ -8,3 +8,4 @@ echo -e "\e[33mtext in yellow colour"
 echo -e "\e[34mtext in blue colour"
 echo -e "\e[35mtext in meganta colour"
 echo -e "\e[36mtext in cyan colour"
+echo text in  colour
