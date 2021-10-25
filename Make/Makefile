@@ -1,4 +1,4 @@
 one:
-    @echo One
+	@echo One
 two:
-    @echo Two
+	@echo Two
