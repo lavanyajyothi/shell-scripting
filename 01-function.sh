@@ -8,3 +8,5 @@ function abc(){
 a=10
 abc
 echo b in main programe=$b
+
+
