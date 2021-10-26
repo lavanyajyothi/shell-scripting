@@ -1,7 +1,7 @@
 #!/bin/bash
 source components/common.sh
 print "Installing Nginx"
-yum install nginxxx -y &>>$LOG
+yum install nginx -y &>>$LOG
 stat $?
 print "Enabling Nginx"
 systemctl enable nginx
