@@ -3,16 +3,18 @@ print(){
   echo -e "\e[1m$1\e[0m"
   echo -e "\n\e[36m#######################$1#######################\e[0m" >>$LOG
 }
+stat(){
+  if [ $1 -eq 0 ]; then
+    echo -e "\e[1;32msuccess\e[0m"
+  else
+    echo -e "\e[1:32mfailure\e[0m"
+  fi
+}
 LOG=/tmp/roboshop.log
 rm -f $LOG
 print "Installing Nginx"
 yum install nginx -y &>>$LOG
-if [ $? -eq 0 ]; then
-  echo -e "\e[1;32msuccess\e[0m"
-else
-  echo -e "\e[1:32mfailure\e[0m"
-fi
-
+stat $?
 print "Enabling Nginx"
 systemctl enable nginx
 print "starting Nginx"
