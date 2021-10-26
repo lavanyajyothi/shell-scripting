@@ -5,9 +5,9 @@ print(){
 }
 stat(){
   if [ $1 -eq 0 ]; then
-    echo -e "\n\e[1;32msuccess\e[0m"
+    echo -n-e "\n\e[1;32msuccess\e[0m"
   else
-    echo -e "\n\e[1:32mfailure\e[0m"
+    echo -n-e "\n\e[1:32mfailure\e[0m"
   fi
 }
 LOG=/tmp/roboshop.log
@@ -17,8 +17,11 @@ yum install nginx -y &>>$LOG
 stat $?
 print "Enabling Nginx\n"
 systemctl enable nginx
+stat $?
+
 print "starting Nginx"
 systemctl start nginx
+stat $?
 
 exit
  curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
