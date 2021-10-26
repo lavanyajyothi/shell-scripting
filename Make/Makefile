@@ -1,8 +1,8 @@
 help:
 	@grep "##" Makefile | grep -v grep | sed -e 's/##//'
-one:##Target One
+one: ##Target One
 	@echo One
-two:##Target Two
+two: ##Target Two
 	@echo Two
-three:##Target Three
+three: ##Target Three
 	@echo Three
