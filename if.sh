@@ -9,7 +9,7 @@ fi
 
 if [ $UID -eq 0 ]
 then
-  echo "you are root user"
+  echo you are root user
 else
-  echo"you r nor root user"
+  echo you r nor root user
 fi
