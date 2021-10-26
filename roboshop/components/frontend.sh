@@ -1,5 +1,5 @@
 #!/bin/bash
-echo -e "\e[1mInstalling ////nginx\e[0m"
+echo -e "\e[1mInstalling nginx\e[0m"
 yum install nginx -y
 
 exit
