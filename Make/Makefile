@@ -1,8 +1,8 @@
 none:
-	make -V .ALLTARGETS | tr ' ' '\n'
-one:
+	@grep "##" Makefile
+one:##
 	@echo One
-two:
+two:##
 	@echo Two
-three:
+three:##
 	@echo Three
