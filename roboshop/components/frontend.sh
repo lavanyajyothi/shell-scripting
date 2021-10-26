@@ -5,9 +5,9 @@ print(){
 }
 stat(){
   if [ $1 -eq 0 ]; then
-    echo -e "\e[1;32msuccess\e[0m"
+    echo -e "\n\e[1;32msuccess\e[0m"
   else
-    echo -e "\e[1:32mfailure\e[0m"
+    echo -e "\n\e[1:32mfailure\e[0m"
   fi
 }
 LOG=/tmp/roboshop.log
