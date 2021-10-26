@@ -1,8 +1,8 @@
 none:
 	@grep "##" Makefile
-one:##
+one:##Target One
 	@echo One
-two:##
+two:##Target Two
 	@echo Two
-three:##
+three:##Target Three
 	@echo Three
