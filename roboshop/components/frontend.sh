@@ -14,8 +14,8 @@ stat(){
 }
 LOG=/tmp/roboshop.log
 rm -f $LOG
-print "Installing Nginxxx"
-yum install nginx -y &>>$LOG
+print "Installing Nginx"
+yum install nginxxx -y &>>$LOG
 stat $?
 print "Enabling Nginx"
 systemctl enable nginx
