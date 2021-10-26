@@ -9,6 +9,7 @@ help:
             printf "%-30s %s\n" $$help_command $$help_info ; \
         done
 git-pull:
+	@echo --------- Pulling Git Code......
 	@git pull &>>/dev/null
 cart:git-pull ## setup cart component
 	@bash components/cart.sh
