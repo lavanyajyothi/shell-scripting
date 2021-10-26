@@ -15,7 +15,7 @@ rm -f $LOG
 print "Installing Nginx"
 yum install nginx -y &>>$LOG
 stat $?
-print "Enabling Nginx"
+print "Enabling Nginx\n"
 systemctl enable nginx
 print "starting Nginx"
 systemctl start nginx
