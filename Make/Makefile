@@ -1,5 +1,5 @@
 none:
-	@grep '^[^#[:space:]].*:' Makefile
+	make -V .ALLTARGETS | tr ' ' '\n'
 one:
 	@echo One
 two:
