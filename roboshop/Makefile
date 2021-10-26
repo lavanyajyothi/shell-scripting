@@ -1,5 +1,5 @@
 help:
-	@grep "##" Makefile | grep -v grep | sed -e 's/##//'
+	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 cart: ## setup cart component
 	@bash components/cart.sh
 catalogue: ## setup catalogue component
