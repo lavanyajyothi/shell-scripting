@@ -2,11 +2,12 @@
 echo -e "\e[1mInstalling Nginx\e[0m"
 yum install nginx -y
 
-exit
+echo -e "\e[1mEnabling Nginx\e[0m"
 systemctl enable nginx
+echo -e "\e[1mStarting Nginx\e[0m"
 systemctl start nginx
-#Let's download the HTDOCS content and deploy under the Nginx path.
 
+exit
  curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 # Deploy in Nginx Default Location.
 
