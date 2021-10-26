@@ -1,5 +1,5 @@
 none:
-	@echo -e "one=Target One\ntwo = Target Two"
+	@grep '^[^#[:space:]].*:' Makefile
 one:
 	@echo One
 two:
