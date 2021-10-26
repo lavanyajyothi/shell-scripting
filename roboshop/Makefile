@@ -20,3 +20,4 @@ rabbitmq: ## setup rabbitmq component
 	@bash components/rabbitmq.sh
 mongodb: ## setup mongodb component
 	@bash components/mongodb.sh
+
