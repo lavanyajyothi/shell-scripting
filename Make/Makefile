@@ -1,5 +1,5 @@
 none:
-	@echo -e"one=Target One\n two = Target Two"
+	@echo -e "one=Target One\ntwo = Target Two"
 one:
 	@echo One
 two:
