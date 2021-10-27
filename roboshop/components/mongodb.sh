@@ -13,6 +13,7 @@ print "Update MongoDB Config"
 sed -i -e's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>>$LOG
 stat $?
 
+
 print "start MongoDB"
 systemctl start mongod &>>$LOG
 stat $?
