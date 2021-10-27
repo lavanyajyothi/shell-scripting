@@ -17,6 +17,7 @@ print "start MongoDB"
 systemctl start mongod &>>$LOG
 stat $?
 
+
 print "enable MongoDBb"
 systemctl enable mongod &>>$LOG
 stat $?
