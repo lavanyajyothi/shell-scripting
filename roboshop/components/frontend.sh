@@ -4,11 +4,11 @@ print "Installing Nginx"
 yum install nginx -y &>>$LOG
 stat $?
 print "Enabling Nginx"
-systemctl enable nginx
+systemctl enable nginx &>>$LOG
 stat $?
 
 print "starting Nginx"
-systemctl start nginx
+systemctl start nginx &>>$LOG
 stat $?
 
 print "download Html pages"
@@ -16,7 +16,7 @@ curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/fron
 stat $?
 
 print "Remove old html pages"
-rm -rf /usr/share/nginx/html/*
+rm -rf /usr/share/nginx/html/* &>>$LOG
 stat $?
 
 print "Extract Frontend archive"
