@@ -14,9 +14,14 @@ stat $?
 print "download Html pages"
 curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip" &>>$LOG
 stat $?
-#cd /usr/share/nginx/html
-#rm -rf *
-#unzip /tmp/frontend.zip
+
+print "Remove old html pages"
+rm-rf /usr/share/nginx/html/* &>>$LOG
+stat $?
+
+print"Extract Frontend archive"
+unzip -d /usr/share/nginx/html/tmp/frontend.zip &>>$LOG
+stat $?
 #mv frontend-main/* .
 #mv static/* .
 #rm -rf frontend-master static README.md
