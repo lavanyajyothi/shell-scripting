@@ -18,7 +18,7 @@ systemctl start mongod &>>$LOG
 stat $?
 
 print "Download Scheme"
-curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"print "update mongodb config" &>>$LOG
+curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip" &>>$LOG
 stat $?
 cd /tmp
 unzip -o -d /tmp mongodb.zip &>>$LOG
