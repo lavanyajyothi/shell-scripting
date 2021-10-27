@@ -4,20 +4,20 @@ print "Download Repo"
 curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo
 stat $?
 
-print "install mongodb"
+print "install mongoDB"
 yum install -y mongodb-org &>>$LOG
 stat $?
-print "update mongodb config"
+print "Update MongoDB Config"
 sed -i -e 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>>$LOG
 stat $?
-print "enable mongodb"
+print "enable MongoDBb"
 systemctl enable mongod &>>$LOG
 stat $?
-print "start mongodb"
+print "start MongoDB"
 systemctl start mongod &>>$LOG
 stat $?
 
-print "Download Scheme"
+print "Download Schema"
 curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip" &>>$LOG
 stat $?
 print "Extract Schema"
