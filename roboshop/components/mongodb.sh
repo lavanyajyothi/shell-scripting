@@ -24,7 +24,7 @@ cd /tmp
 unzip -o -d /tmp /tmp/mongodb.zip &>>$LOG
 stat $?
 
-print"Load Schema"
+print "Load Schema"
 cd /tmp/mongodb-main
 mongo < catalogue.js &>>$LOG
 mongo < users.js &>>$LOG
