@@ -30,5 +30,12 @@ stat $?
 print "copy nginx roboshop config file"
 cp /tmp/frontend-main/localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $?
-#systemctl restart nginx
+
+print "enabling nginx"
+systemctl enable nginx &>>LOG
+stat $?
+
+print "starting nginx"
+systemctl restart nginx &>>$LOG
+stat $?
 
