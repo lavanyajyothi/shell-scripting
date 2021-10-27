@@ -27,7 +27,7 @@ unzip -o -d /home/roboshop /tmp/catalogue.zip
 stat $?
 
 print "Copy Content"
-mv /home/roboshopcatalogue-main /home/roboshop/catalogue
+mv /home/roboshop/catalogue-main /home/roboshop/catalogue
 stat $?
 
 print "Install NodeJS Dependencies"
