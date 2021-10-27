@@ -8,7 +8,7 @@ print "install mongodb"
 yum install -y mongodb-org &>>$LOG
 stat $?
 print "update mongodb config"
-sed -i -e 's/127.0.0.0/0.0.0.0/g' /etc/mongod.conf &>>$LOG
+sed -i -e 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>>$LOG
 stat $?
 print "enable mongodb"
 systemctl enable mongod &>>$LOG
