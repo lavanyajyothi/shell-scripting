@@ -1,0 +1,18 @@
+{
+  "Comment": "Update record to reflect new IP address for a system ",
+  "Changes": [
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "myservice.myvpc.mycompany.com",
+        "Type": "A",
+        "TTL": 10,
+        "ResourceRecords": [
+          {
+            "Value": "10.79.252.13"
+          }
+        ]
+      }
+    }
+  ]
+}
