@@ -4,12 +4,12 @@
     {
       "Action": "UPSERT",
       "ResourceRecordSet": {
-        "Name": "myservice.myvpc.mycompany.com",
+        "Name": "DNSNAME",
         "Type": "A",
         "TTL": 10,
         "ResourceRecords": [
           {
-            "Value": "10.79.252.13"
+            "Value": "IPADDRESS"
           }
         ]
       }
