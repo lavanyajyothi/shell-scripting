@@ -5,5 +5,6 @@ MSPACE=$(cat $0 components/common.sh | grep print | awk -F '"' '{print $2}' | aw
 COMPONENT_NAME=User
 COMPONENT=user
 NodeJS
+CHECK_MONGO_FROM_APP
 
 
