@@ -49,3 +49,11 @@ stat $?
 print "start catalogue service"
 systemctl daemon-reload &>>$LOG && systemctl restart catalogue &>>$LOG && systemctl enable catalogue &>>$LOG
 stat $?
+
+print "checking DB connections from app"
+STAT=$(curl -s localhost:8080/health | jq .mongo)
+if [ $STAT == "true" ]; then
+  stat 0
+else
+  stat 1
+fi
