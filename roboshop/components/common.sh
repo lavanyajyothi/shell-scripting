@@ -64,7 +64,7 @@ NodeJS(){
   chown -R roboshop:roboshop /home/roboshop
   stat $?
   print "Update DNS records in SystemD config"
-  sed -i -e"s/MONGO_DNSNAME/mongodb.roboshop.internal/" -e 's/REDIS_ENDPOINT/reddis.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' /home/roboshop/${COMPONENT}/systemd.service &>>$LOG
+  sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' -e 's/REDIS_ENDPOINT/reddis.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' /home/roboshop/${COMPONENT}/systemd.service &>>$LOG
   stat $?
   print "Copy SystemD file"
   mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
@@ -87,14 +87,4 @@ CHECK_MONGO_FROM_APP(){
     stat 1
   fi
 }
-CHECK_REDIS_FROM_APP(){
-  print "checking DB connections from app"
-  sleep 5
-  STAT=$(curl -s localhost:8080/health |  jq .redis)
-  echo status = $STAT
-  if [ $STAT == "true" ]; then
-    stat 0
-  else
-    stat 1
-  fi
-}
+
