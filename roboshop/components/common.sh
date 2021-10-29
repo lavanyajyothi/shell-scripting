@@ -3,7 +3,7 @@ print() {
   SPACE=$(($MSPACE-$LSPACE))
   while [ $SPACE -gt 0 ]; do
     SPACES="$SPACES$(echo ' ')"
-    $SPACE=$(($SPACE-1))
+    SPACE=$(($SPACE-1))
   done
   echo $SPACES | cat -A
  echo -n -e "\e[1m$1${SPACE}\e[0m........"
