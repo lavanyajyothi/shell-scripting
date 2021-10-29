@@ -2,7 +2,7 @@
 
 source components/common.sh
 
-MLINE=$(cat $0 | grep ^print | awk -F '"' '{print $2}' | awk '{ print length }' | sort | tail -l)
+MSPACE=$(cat $0 | grep ^print | awk -F '"' '{print $2}' | awk '{ print length }' | sort | tail -l)
 
 
 print "install NodeJS"
