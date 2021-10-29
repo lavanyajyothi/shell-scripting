@@ -43,7 +43,7 @@ stat $?
 print "Update DNS records in SystemD config"
 sed -i -e"s/MONGO_DNSNAME/mongodb.roboshop.internal/" /home/roboshop/catalogue/systemd.service &>>$LOG
 stat $?
-print "Copy SysyemD file"
+print "Copy SystemD file"
 mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
 stat $
 print "start catalogue service"
