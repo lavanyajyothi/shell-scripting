@@ -22,6 +22,7 @@ stat(){
 LOG=/tmp/roboshop.log
 rm -f $LOG
 
+
 NodeJS(){
   print "install NodeJS"
   yum install nodejs make gcc-c++ -y &>>$LOG
