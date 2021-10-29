@@ -9,10 +9,20 @@
         "TTL": 10,
         "ResourceRecords": [
           {
-            "Value": "IPADDRESS"
+            "Value": IPADDRESS
           }
         ]
       }
     }
   ]
 }
+
+
+
+
+
+
+
+
+
+
