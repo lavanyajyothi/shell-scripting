@@ -39,7 +39,7 @@ NodeJS(){
   stat $?
 
 
-  print "Download $(COMPONENT_NAME)"
+  print "Download $COMPONENT_NAME"
   curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG
   stat $?
 
@@ -47,7 +47,7 @@ NodeJS(){
   rm -rf /home/roboshop/${COMPONENT}
   stat $?
 
-  print "Extract ${COMPONENT_NAMET}"
+  print "Extract $COMPONENT_NAME"
   unzip -o -d /home/roboshop /tmp/${COMPONENT}.zip &>>$LOG
   stat $?
 
@@ -69,7 +69,7 @@ NodeJS(){
   print "Copy SystemD file"
   mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
   stat $?
-  print "start ${COMPONENT_NAME} service"
+  print "start $COMPONENT_NAME service"
   systemctl daemon-reload &>>$LOG && systemctl restart ${COMPONENT} &>>$LOG && systemctl enable ${COMPONENT} &>>$LOG
   stat $?
 
