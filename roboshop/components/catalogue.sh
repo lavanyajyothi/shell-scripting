@@ -18,6 +18,7 @@ print "start catalogue service"
 systemctl daemon-reload &>>$LOG && systemctl restart catalogue &>>$LOG && systemctl enable catalogue &>>$LOG
 stat $?
 
+
 sleep 5
 
 print "checking DB connections from app"
