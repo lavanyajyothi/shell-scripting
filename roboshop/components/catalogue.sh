@@ -23,7 +23,7 @@ rm -rf /home/roboshop/catalogue
 stat $?
 
 print "Extract Catalogue"
-unzip -o -d /home/roboshop /tmp/catalogue.zip
+unzip -o -d /home/roboshop /tmp/catalogue.zip &>>$LOG
 stat $?
 
 print "Copy Content"
@@ -39,8 +39,12 @@ print "Fix App Permissions"
 chown -R roboshop:roboshop /home/roboshop
 stat $?
 
-
-# mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
-# systemctl daemon-reload
-# systemctl start catalogue
-# systemctl enable catalogue
+print "Update DNS records in SystemD config"
+sed -i -e"s/MONGO_DNSNAME/mongodb.roboshop.internal/" /home/roboshop/catalogue/systemd.service &>>$LOG
+stat $?
+print "Copy SysyemD file"
+mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
+stat $
+print "start catalogue service"
+systemctl daemon-reload &>>$LOG && systemctl restart catalogue &>>$LOG && systemctl enable catalogue &>>$LOG
+stat $?
