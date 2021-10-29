@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source components/common.sh
+
 print "install NodeJS"
 yum install nodejs make gcc-c++ -y &>>$LOG
 stat $?
@@ -39,3 +40,12 @@ print "Fix App Permissions"
 chown -R roboshop:roboshop /home/roboshop
 stat $?
 
+print "Update DNS records in SystemD config"
+sed -i -e"s/MONGO_DNSNAME/mongodb.roboshop.internal/" /home/roboshop/catalogue/systemd.service &>>$LOG
+stat $?
+print "Copy SysyemD file"
+mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
+stat $
+print "start catalogue service"
+systemctl daemon-reload &>>$LOG && systemctl restart catalogue &>>$LOG && systemctl enable catalogue &>>$LOG
+stat $?
