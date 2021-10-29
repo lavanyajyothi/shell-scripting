@@ -7,12 +7,12 @@ MSPACE=$(cat $0 components/common.sh | grep   print | awk -F '"' '{print $2}' | 
 COMPONENT_NAME=Cart
 COMPONENT=cart
 
-NodeJS
+NODEJS
 
 CHECK_REDIS_FROM_APP(){
   print "checking DB connections from app"
   sleep 5
-  STAT=$(curl -s localhost:8080/health |  jq .reddis)
+  STAT=$(curl -s localhost:8080/health |  jq .redis)
   echo status = $STAT
   if [ $STAT == "true" ]; then
     stat 0
