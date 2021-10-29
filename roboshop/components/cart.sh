@@ -8,7 +8,7 @@ MSPACE=$(cat $0 components/common.sh | grep   print | awk -F '"' '{print $2}' | 
 COMPONENT_NAME=Cart
 COMPONENT=cart
 
-NODEJS
+NodeJS
 
 CHECK_REDIS_FROM_APP(){
   print "checking DB connections from app"
