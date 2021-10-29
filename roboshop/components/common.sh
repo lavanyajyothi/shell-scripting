@@ -1,8 +1,6 @@
 print(){
   LSPACE=$(echo $1 | awk '{print length}')
-  echo "SPACES=$(($MSPACE - $LSPACE))"
-  echo "SPACES=$SPACES"
-
+  SPACE=(($MSPACE-$LSPACE))
  echo -n -e "\e[1m$1${SPACES}\e[0m........"
  echo -e "\n\e[36m#######################$1#######################\e[0m" >>$LOG
 }
