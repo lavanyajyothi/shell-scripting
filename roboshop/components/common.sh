@@ -93,8 +93,8 @@ CHECK_REDIS_FROM_APP(){
   sleep 5
   STAT=$(curl -s localhost:8080/health | jq .redis)
   if [ "$STAT" == "true" ]; then
-    stat 0
+    Stat 0
   else
-    stat 1
+    Stat 1
   fi
 }
