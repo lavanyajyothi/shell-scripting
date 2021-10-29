@@ -88,7 +88,7 @@ CHECK_MONGO_FROM_APP(){
   fi
 }
 
-CHECK_REDIS_FROM_APP(){
+CHECK_REDDIS_FROM_APP(){
   print "checking DB connections from app"
   sleep 5
   STAT=$(curl -s localhost:8080/health | jq .reddis)
