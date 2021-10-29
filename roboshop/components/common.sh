@@ -15,3 +15,4 @@ stat(){
 }
 LOG=/tmp/roboshop.log
 rm -f $LOG
+
