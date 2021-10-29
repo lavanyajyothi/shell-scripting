@@ -98,3 +98,4 @@ CHECK_REDDIS_FROM_APP(){
   else
     stat 1
   fi
+}
