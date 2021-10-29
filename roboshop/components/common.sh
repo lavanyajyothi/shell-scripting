@@ -92,8 +92,8 @@ CHECK_MONGO_FROM_APP(){
 CHECK_REDIS_FROM_APP(){
   print "checking DB connections from app"
   sleep 5
-  STAT=$(curl -s localhost:8080/health | jq .redis)
-  if [ "$STAT" == "true" ]; then
+  STAT=$(curl -s localhost:8080/health | jq .reddis)
+  if [ $STAT == "true" ]; then
     stat 0
   else
     stat 1
