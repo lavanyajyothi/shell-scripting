@@ -91,9 +91,10 @@ CHECK_REDIS_FROM_APP(){
   print "checking DB connections from app"
   sleep 5
   STAT=$(curl -s localhost:8080/health |  jq .redis)
-  if [ "$STAT" == "true" ]; then
-    Stat 0
+  echo status = $STAT
+  if [ $STAT == "true" ]; then
+    stat 0
   else
-    Stat 1
+    stat 1
   fi
 }
