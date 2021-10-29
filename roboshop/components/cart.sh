@@ -7,3 +7,4 @@ MSPACE=$(cat $0 | grep ^print | awk -F '"' '{print $2}' | awk '{ print length }'
 COMPONENT_NAME=Cart
 COMPONENT=cart
 NodeJS
+CHECK_REDIS_FROM_APP
