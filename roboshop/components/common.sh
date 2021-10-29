@@ -63,6 +63,16 @@ NodeJS(){
   print "Fix App Permissions"
   chown -R roboshop:roboshop /home/roboshop
   stat $?
+  print "Update DNS records in SystemD config"
+  sed -i -e"s/MONGO_DNSNAME/mongodb.roboshop.internal/" -e 's/REDIS_ENDPOINT/reddis.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal' /home/roboshop/${COMPONENT}/systemd.service &>>$LOG
+  stat $?
+  print "Copy SystemD file"
+  mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
+  stat $?
+  print "start ${COMPONENT_NAME} service"
+  systemctl daemon-reload &>>$LOG && systemctl restart ${COMPONENT} &>>$LOG && systemctl enable ${COMPONENT} &>>$LOG
+  stat $?
+
 
 }
 

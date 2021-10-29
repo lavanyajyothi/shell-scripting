@@ -7,15 +7,6 @@ COMPONENT=user
 NodeJS
 
 
-print "Update DNS records in SystemD config"
-sed -i -e"s/MONGO_DNSNAME/mongodb.roboshop.internal/" /home/roboshop/catalogue/systemd.service &>>$LOG
-stat $?
-print "Copy SystemD file"
-mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
-stat $?
-print "start catalogue service"
-systemctl daemon-reload &>>$LOG && systemctl restart catalogue &>>$LOG && systemctl enable catalogue &>>$LOG
-stat $?
 
 sleep 5
 
