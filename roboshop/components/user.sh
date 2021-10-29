@@ -6,8 +6,6 @@ COMPONENT_NAMET = User
 COMPONENT=user
 NodeJS
 
-
-
 sleep 5
 
 print "checking DB connections from app"
