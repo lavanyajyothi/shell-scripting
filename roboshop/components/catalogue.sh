@@ -10,7 +10,6 @@ exit
 yum install nodejs make gcc-c++ -y &>>$LOG
 stat $?
 
-
 print "Add Roboshop User"
 id roboshop &>>$LOG
 if [ $? -eq 0 ]; then
