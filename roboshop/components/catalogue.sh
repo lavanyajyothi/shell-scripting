@@ -6,6 +6,7 @@ MSPACE=$(cat $0 | grep ^print | awk -F '"' '{print $2}' | awk '{ print length }'
 
 print "install NodeJS"
 
+
 yum install nodejs make gcc-c++ -y &>>$LOG
 stat $?
 
