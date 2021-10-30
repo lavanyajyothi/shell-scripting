@@ -2,7 +2,7 @@
 
 source components/common.sh
 
-MSPACE=$(cat $0 | grep ^print | awk -F '"' '{print $2}' | awk '{ print length }' | sort | tail -1)
+MSPACE=$(cat $0  components/common.sh | grep print | awk -F '"' '{print $2}' | awk '{ print length }' | sort | tail -1)
 
 COMPONENT_NAME=MySQL
 COMPONENT=mysql
@@ -15,7 +15,7 @@ print "install Mariadb Service"
 yum remove mariadb-libs -y &>>$LOG && yum install mysql-community-server -y &>>$LOG
 stat $?
 
-print "Start MySQL"
+print "Start MySQL Service"
 systemctl enable mysqld &>>$LOG && systemctl start mysqld &>>$LOG
 stat $?
 
