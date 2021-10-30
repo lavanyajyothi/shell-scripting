@@ -6,40 +6,40 @@ help:
             help_split=($$help_line) ; \
             help_command=`echo $${help_split[0]} | sed -e 's/^ *//' -e 's/ *$$//'` ; \
             help_info=`echo $${help_split[2]} | sed -e 's/^ *//' -e 's/ *$$//'` ; \
-            printf "%-30s %s\n" $$help_command $$help_info ; \
+            printf "%-15s %s\n" $$help_command $$help_info ; \
         done
 git-pull:
-	@echo --------- Pulling Git Code......
-	@git pull &>>/dev/null
+	@echo ---------+ Pulling Git Code +......
+	@git pull &>/dev/null
 cart:git-pull ## setup cart component
-	@bash components/cart.sh
+	@sudo bash components/cart.sh
 
 catalogue:git-pull ## setup catalogue component
-	@bash components/catalogue.sh
+	@sudo bash components/catalogue.sh
 
 user:git-pull ## setup user component
-	@bash components/user.sh
+	@sudo bash components/user.sh
 
 shipping:git-pull  ## setup shipping component
-	@bash components/shipping.sh
+	@sudo bash components/shipping.sh
 
 payment:git-pull ## setup payment component
-	@bash components/payment.sh
+	@sudo bash components/payment.sh
 
 frontend:git-pull ## setup frontend component
-	@bash components/frontend.sh
+	@sudo bash components/frontend.sh
 
 mysql:git-pull ## setup mysql component
-	@bash components/mysql.sh
+	@sudo bash components/mysql.sh
 
-reddis:git-pull ## setup reddis component
-	@bash components/reddis.sh
+redis:git-pull ## setup reddis component
+	@sudo bash components/reddis.sh
 
 rabbitmq:git-pull ## setup rabbitmq component
-	@bash components/rabbitmq.sh
+	@sudo bash components/rabbitmq.sh
 
 mongodb:git-pull ## setup mongodb component
-	@bash components/mongodb.sh
+	@sudo bash components/mongodb.sh
 
 
 
