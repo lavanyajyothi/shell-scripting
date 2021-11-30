@@ -40,3 +40,4 @@ print "starting nginx"
 systemctl restart nginx &>>$LOG
 stat $?
 
+
