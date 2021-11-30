@@ -1,4 +1,4 @@
 #!/bin/bash
 
 #syntax
-echo helloworld
+echo helloworld how r u
