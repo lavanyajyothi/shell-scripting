@@ -16,7 +16,7 @@ sed -e "s/DNSNAME/$1.roboshop.internal/" -e "s/IPADDRESS/${IP}/" record.json >/t
 aws route53 change-resource-record-sets --hosted-zone-id Z08537272MHAQMEL5KTIG --change-batch file:///tmp/record.json | jq &>/dev/null
 }
 
-if [ "$1" == "all"]; then
+if [ "$1" == "all" ]; then
   ALL={frontend mongodb catalogue redis user cart mysql shipping rabbitmq payment)
   for component in ${ALL[*]}; do
     echo "Creating Instance - $component"
