@@ -8,3 +8,4 @@ else
   echo -e "\e[1;33m$1 Instance already exists\e[0m"
   return
 fi
+
