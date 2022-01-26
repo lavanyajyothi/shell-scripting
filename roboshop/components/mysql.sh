@@ -30,6 +30,7 @@ if [ $? -ne 0 ]; then
   stat $?
 fi
 
+
 DOWNLOAD "/tmp"
 
 print "Load Schema"
